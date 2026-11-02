@@ -254,6 +254,15 @@ export default function Home() {
           </section>
         </Reveal>
       </main>
+      <footer className="flex w-full max-w-3xl items-center justify-between border-t px-4 py-6 text-sm text-muted-foreground sm:px-16">
+        <p>© 2026 Andrew Virya Victorio</p>
+        <Link
+          href="#main-content"
+          className="underline underline-offset-4 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+        >
+          Back to top ↑
+        </Link>
+      </footer>
     </div>
   );
 }
