@@ -31,15 +31,12 @@ export default function Home() {
     <div className="flex min-h-screen flex-col items-center justify-center bg-background font-sans">
       <main className="flex w-full max-w-3xl flex-1 flex-col items-start justify-between gap-16 bg-background px-4 py-16 sm:items-start sm:px-16 sm:py-32">
         <div className="flex w-full items-start justify-between gap-4">
-          <nav className="flex w-full flex-col items-stretch gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
+          <nav className="flex items-center gap-2">
             {NAVIGATION.map((nav, idx) => (
               <Fragment key={nav.name}>
                 <Navigation name={nav.name} href={nav.href} />
                 {idx < NAVIGATION.length - 1 && (
-                  <span
-                    className="hidden text-muted-foreground sm:inline"
-                    aria-hidden="true"
-                  >
+                  <span className="text-muted-foreground" aria-hidden="true">
                     /
                   </span>
                 )}
