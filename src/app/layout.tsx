@@ -3,6 +3,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import TabTitle from "@/components/tab-title";
 import { cn } from "@/lib/utils";
 
 const jetbrainsMonoHeading = JetBrains_Mono({
@@ -40,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       )}
     >
       <body className="min-h-full flex flex-col">
+        <TabTitle />
         {children}
         <Analytics />
         <SpeedInsights />
