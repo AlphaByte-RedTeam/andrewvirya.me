@@ -3,6 +3,7 @@ import {
   BugIcon,
   CrosshairIcon,
   DownloadIcon,
+  MailIcon,
   RadarIcon,
 } from "lucide-react";
 import Link from "next/link";
@@ -74,18 +75,28 @@ export default function Home() {
                 Offensive Security Practitioner
               </P>
             </div>
-            <InteractiveMotion className="w-full sm:w-auto">
-              <Button className="w-full sm:w-auto" asChild>
-                <Link
-                  href="https://docs.google.com/document/d/1jtaCuy1BtGAulHfWWZGrK1CmZZNyTcsM90C-WDt4v4o/export?format=pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <DownloadIcon />
-                  Download Resume
-                </Link>
-              </Button>
-            </InteractiveMotion>
+            <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
+              <InteractiveMotion className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto" asChild>
+                  <Link
+                    href="https://docs.google.com/document/d/1jtaCuy1BtGAulHfWWZGrK1CmZZNyTcsM90C-WDt4v4o/export?format=pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <DownloadIcon />
+                    Download Resume
+                  </Link>
+                </Button>
+              </InteractiveMotion>
+              <InteractiveMotion className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto" variant="outline" asChild>
+                  <Link href="mailto:avv03@protonmail.com">
+                    <MailIcon />
+                    Email
+                  </Link>
+                </Button>
+              </InteractiveMotion>
+            </div>
           </div>
         </Reveal>
         <Reveal delay={0.05}>
@@ -240,23 +251,6 @@ export default function Home() {
                 />
               ))}
             </ul>
-          </section>
-        </Reveal>
-        <Reveal delay={0.05}>
-          <section
-            id="contact"
-            className="flex w-full flex-col gap-4 sm:w-auto"
-          >
-            <H2 className="underline">Contact</H2>
-            <Link
-              href="mailto:avv03@protonmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <P className="text-muted-foreground underline hover:text-black dark:hover:text-white">
-                avv03@protonmail.com
-              </P>
-            </Link>
           </section>
         </Reveal>
       </main>
