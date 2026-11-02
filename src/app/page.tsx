@@ -111,20 +111,20 @@ export default function Home() {
               <div className="flex flex-col gap-1 items-start">
                 <P>I break systems legally for a living.</P>
                 <P>Solving CTF challenges in my free time.</P>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">
-                    <BugIcon aria-hidden="true" />
-                    Web App Security
-                  </Badge>
-                  <Badge variant="outline">
-                    <RadarIcon aria-hidden="true" />
-                    Vulnerability Assessment
-                  </Badge>
-                  <Badge variant="outline">
-                    <CrosshairIcon aria-hidden="true" />
-                    Penetration Testing
-                  </Badge>
-                </div>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline">
+                  <BugIcon aria-hidden="true" />
+                  Web App Security
+                </Badge>
+                <Badge variant="outline">
+                  <RadarIcon aria-hidden="true" />
+                  Vulnerability Assessment
+                </Badge>
+                <Badge variant="outline">
+                  <CrosshairIcon aria-hidden="true" />
+                  Penetration Testing
+                </Badge>
               </div>
             </div>
             <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
