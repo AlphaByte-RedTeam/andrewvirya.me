@@ -1,68 +1,225 @@
-import Image from "next/image";
+import {
+  ArrowRightIcon,
+  BugIcon,
+  CrosshairIcon,
+  DownloadIcon,
+  RadarIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { Fragment } from "react";
+import Certification from "@/components/certification";
+import CompanyLogo from "@/components/company-logo";
+import Navigation from "@/components/navigation";
+import Socials from "@/components/socials";
+import { H1, H2, P } from "@/components/typography";
+import { Avatar } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
+import { CERTIFICATIONS } from "@/data/certifications";
+import { CTF_PLATFORMS } from "@/data/ctfPlatforms";
+import { NAVIGATION } from "@/data/navigations";
+import { SOCIALS } from "@/data/socials";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-neutral-100 font-sans">
+      <main className="flex w-full max-w-3xl flex-1 flex-col items-start justify-between bg-neutral-100 px-4 py-16 sm:items-start sm:px-16 sm:py-32 gap-16">
+        <div className="flex w-full flex-col items-stretch gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
+          {NAVIGATION.map((nav, idx) => (
+            <Fragment key={nav.name}>
+              <Navigation name={nav.name} href={nav.href} />
+              {idx < NAVIGATION.length - 1 && (
+                <span
+                  className="hidden text-muted-foreground sm:inline"
+                  aria-hidden="true"
+                >
+                  /
+                </span>
+              )}
+            </Fragment>
+          ))}
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:items-start">
+          <div className="flex flex-col items-start gap-1">
+            <div className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-center">
+              <H1>Andrew Virya Victorio</H1>
+              <span className="mx-2 hidden text-muted-foreground sm:inline">
+                |
+              </span>
+              <P className="font-mono text-lg">dedgh0st</P>
+            </div>
+            <P className="font-inter text-muted-foreground text-sm">
+              Offensive Security Practitioner
+            </P>
+          </div>
+          <Button className="w-full sm:w-auto" asChild>
+            <Link
+              href="https://docs.google.com/document/d/1jtaCuy1BtGAulHfWWZGrK1CmZZNyTcsM90C-WDt4v4o/export?format=pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <DownloadIcon />
+              Download Resume
+            </Link>
+          </Button>
+        </div>
+        <section
+          id="about-me"
+          className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:items-start"
+        >
+          <div className="flex flex-col items-start gap-4">
+            <Link href="#about-me">
+              <H2 className="underline">About Me</H2>
+            </Link>
+            <div className="flex flex-col gap-1 items-start">
+              <P>I break systems legally for a living.</P>
+              <P>Solving CTF challenges in my free time.</P>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline">
+                  <BugIcon aria-hidden="true" />
+                  Web App Security
+                </Badge>
+                <Badge variant="outline">
+                  <RadarIcon aria-hidden="true" />
+                  Vulnerability Assessment
+                </Badge>
+                <Badge variant="outline">
+                  <CrosshairIcon aria-hidden="true" />
+                  Penetration Testing
+                </Badge>
+              </div>
+            </div>
+          </div>
+          <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
+            <Button className="w-full sm:w-auto" variant="outline" asChild>
+              <Link href="/about" target="_blank" rel="noopener noreferrer">
+                More About Me
+                <ArrowRightIcon />
+              </Link>
+            </Button>
+          </div>
+        </section>
+        <section
+          id="ctf"
+          className="flex w-full flex-col items-start gap-4 sm:w-auto"
+        >
+          <Link href="#ctf">
+            <H2 className="underline">CTF</H2>
+          </Link>
+          <P>
+            Sharpening my cyber security skills in safe and controlled
+            environments.
+          </P>
+          <div className="grid w-full grid-cols-5 gap-4 sm:w-auto">
+            {CTF_PLATFORMS.map((platform) => (
+              <HoverCard key={platform.href}>
+                <HoverCardTrigger asChild>
+                  <Link
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit ${platform.name}`}
+                    className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                  >
+                    <Avatar className="size-12">
+                      <CompanyLogo
+                        domain={platform.domain}
+                        className="size-full rounded-full object-contain p-1"
+                      />
+                    </Avatar>
+                  </Link>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-fit">
+                  <P>{platform.name}</P>
+                </HoverCardContent>
+              </HoverCard>
+            ))}
+          </div>
+        </section>
+        <section
+          id="articles-media"
+          className="flex w-full flex-col items-start gap-4 sm:w-auto"
+        >
+          <Link href="#articles-media">
+            <H2 className="underline">Other Activity</H2>
+          </Link>
+          <P className="w-full sm:w-sm">
+            Writing CTF write-ups and security breakdowns on{" "}
+            <Link
+              href="https://medium.com/@dedgh0st"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline hover:text-blue-800"
+            >
+              Medium
+            </Link>
+            , plus sharing bite-sized cybersec content on{" "}
+            <Link
+              href="https://www.tiktok.com/@andrewvirya"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 underline hover:text-blue-800"
+            >
+              TikTok.
+            </Link>
+          </P>
+        </section>
+        <section
+          id="socials"
+          className="flex w-full flex-col items-start gap-4 sm:w-auto"
+        >
+          <Link href="#socials">
+            <H2 className="underline">Socials</H2>
+          </Link>
+          <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto">
+            {SOCIALS.map((social) => (
+              <Socials
+                key={social.name}
+                handle={social.handle}
+                name={social.name}
+                socialUrl={social.socialUrl}
+              />
+            ))}
+          </div>
+        </section>
+        <section
+          id="certifications"
+          className="flex w-full flex-col items-start gap-4 sm:w-auto"
+        >
+          <Link href="#certifications">
+            <H2 className="underline">Certifications</H2>
+          </Link>
+          <ul className="flex w-full flex-col gap-4 sm:w-auto">
+            {CERTIFICATIONS.map((certification) => (
+              <Certification
+                key={certification.name}
+                name={certification.name}
+                href={certification.href}
+                credentialId={certification.credentialId}
+                issuedBy={certification.issuedBy}
+                issuedDate={certification.issuedDate}
+                expirationDate={certification.expirationDate}
+              />
+            ))}
+          </ul>
+        </section>
+        <section id="contact" className="flex w-full flex-col gap-4 sm:w-auto">
+          <H2 className="underline">Contact</H2>
+          <Link
+            href="mailto:avv03@protonmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+            <P className="text-muted-foreground underline hover:text-black">
+              avv03@protonmail.com
+            </P>
+          </Link>
+        </section>
       </main>
     </div>
   );

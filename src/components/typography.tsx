@@ -39,3 +39,13 @@ export const H3 = ({
     </h3>
   );
 };
+
+export const P = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return <p className={`font-sans text-sm ${className || ""}`}>{children}</p>;
+};
