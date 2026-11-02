@@ -2,6 +2,7 @@
 
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useEffect, useState } from "react";
+import InteractiveMotion from "@/components/interactive-motion";
 import { Button } from "@/components/ui/button";
 
 type Theme = "light" | "dark";
@@ -26,14 +27,16 @@ export default function ThemeSwitcher() {
   };
 
   return (
-    <Button
-      variant="outline"
-      size="icon"
-      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-      aria-pressed={theme === "dark"}
-      onClick={toggleTheme}
-    >
-      {theme === "dark" ? <SunIcon /> : <MoonIcon />}
-    </Button>
+    <InteractiveMotion>
+      <Button
+        variant="outline"
+        size="icon"
+        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        aria-pressed={theme === "dark"}
+        onClick={toggleTheme}
+      >
+        {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+      </Button>
+    </InteractiveMotion>
   );
 }

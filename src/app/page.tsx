@@ -9,7 +9,9 @@ import Link from "next/link";
 import { Fragment } from "react";
 import Certification from "@/components/certification";
 import CompanyLogo from "@/components/company-logo";
+import InteractiveMotion from "@/components/interactive-motion";
 import Navigation from "@/components/navigation";
+import Reveal from "@/components/reveal";
 import Socials from "@/components/socials";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { H1, H2, P } from "@/components/typography";
@@ -30,197 +32,222 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background font-sans">
       <main className="flex w-full max-w-3xl flex-1 flex-col items-start justify-between gap-16 bg-background px-4 py-16 sm:items-start sm:px-16 sm:py-32">
-        <div className="flex w-full items-start justify-between gap-4">
-          <nav className="flex items-center gap-2">
-            {NAVIGATION.map((nav, idx) => (
-              <Fragment key={nav.name}>
-                <Navigation name={nav.name} href={nav.href} />
-                {idx < NAVIGATION.length - 1 && (
-                  <span className="text-muted-foreground" aria-hidden="true">
-                    /
-                  </span>
-                )}
-              </Fragment>
-            ))}
-          </nav>
-          <ThemeSwitcher />
-        </div>
-        <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:items-start">
-          <div className="flex flex-col items-start gap-1">
-            <div className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-center">
-              <H1>Andrew Virya Victorio</H1>
-              <span className="mx-2 hidden text-muted-foreground sm:inline">
-                |
-              </span>
-              <P className="font-mono text-lg">dedgh0st</P>
-            </div>
-            <P className="font-inter text-muted-foreground text-sm">
-              Offensive Security Practitioner
-            </P>
+        <Reveal>
+          <div className="flex w-full items-start justify-between gap-4">
+            <nav className="flex items-center gap-2">
+              {NAVIGATION.map((nav, idx) => (
+                <Fragment key={nav.name}>
+                  <Navigation name={nav.name} href={nav.href} />
+                  {idx < NAVIGATION.length - 1 && (
+                    <span className="text-muted-foreground" aria-hidden="true">
+                      /
+                    </span>
+                  )}
+                </Fragment>
+              ))}
+            </nav>
+            <ThemeSwitcher />
           </div>
-          <Button className="w-full sm:w-auto" asChild>
-            <Link
-              href="https://docs.google.com/document/d/1jtaCuy1BtGAulHfWWZGrK1CmZZNyTcsM90C-WDt4v4o/export?format=pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <DownloadIcon />
-              Download Resume
-            </Link>
-          </Button>
-        </div>
-        <section
-          id="about-me"
-          className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:items-start"
-        >
-          <div className="flex flex-col items-start gap-4">
-            <Link href="#about-me">
-              <H2 className="underline">About Me</H2>
-            </Link>
-            <div className="flex flex-col gap-1 items-start">
-              <P>I break systems legally for a living.</P>
-              <P>Solving CTF challenges in my free time.</P>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">
-                  <BugIcon aria-hidden="true" />
-                  Web App Security
-                </Badge>
-                <Badge variant="outline">
-                  <RadarIcon aria-hidden="true" />
-                  Vulnerability Assessment
-                </Badge>
-                <Badge variant="outline">
-                  <CrosshairIcon aria-hidden="true" />
-                  Penetration Testing
-                </Badge>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:items-start">
+            <div className="flex flex-col items-start gap-1">
+              <div className="flex flex-col items-start sm:flex-row sm:items-center sm:justify-center">
+                <H1>Andrew Virya Victorio</H1>
+                <span className="mx-2 hidden text-muted-foreground sm:inline">
+                  |
+                </span>
+                <P className="font-mono text-lg">dedgh0st</P>
+              </div>
+              <P className="font-inter text-muted-foreground text-sm">
+                Offensive Security Practitioner
+              </P>
+            </div>
+            <InteractiveMotion className="w-full sm:w-auto">
+              <Button className="w-full sm:w-auto" asChild>
+                <Link
+                  href="https://docs.google.com/document/d/1jtaCuy1BtGAulHfWWZGrK1CmZZNyTcsM90C-WDt4v4o/export?format=pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <DownloadIcon />
+                  Download Resume
+                </Link>
+              </Button>
+            </InteractiveMotion>
+          </div>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <section
+            id="about-me"
+            className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:items-start"
+          >
+            <div className="flex flex-col items-start gap-4">
+              <Link href="#about-me">
+                <H2 className="underline">About Me</H2>
+              </Link>
+              <div className="flex flex-col gap-1 items-start">
+                <P>I break systems legally for a living.</P>
+                <P>Solving CTF challenges in my free time.</P>
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="outline">
+                    <BugIcon aria-hidden="true" />
+                    Web App Security
+                  </Badge>
+                  <Badge variant="outline">
+                    <RadarIcon aria-hidden="true" />
+                    Vulnerability Assessment
+                  </Badge>
+                  <Badge variant="outline">
+                    <CrosshairIcon aria-hidden="true" />
+                    Penetration Testing
+                  </Badge>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
-            <Button className="w-full sm:w-auto" variant="outline" asChild>
-              <Link href="/about" target="_blank" rel="noopener noreferrer">
-                More About Me
-                <ArrowRightIcon />
-              </Link>
-            </Button>
-          </div>
-        </section>
-        <section
-          id="ctf"
-          className="flex w-full flex-col items-start gap-4 sm:w-auto"
-        >
-          <Link href="#ctf">
-            <H2 className="underline">CTF</H2>
-          </Link>
-          <P>
-            Sharpening my cyber security skills in safe and controlled
-            environments.
-          </P>
-          <div className="grid w-full grid-cols-5 gap-4 sm:w-auto">
-            {CTF_PLATFORMS.map((platform) => (
-              <HoverCard key={platform.href}>
-                <HoverCardTrigger asChild>
-                  <Link
-                    href={platform.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Visit ${platform.name}`}
-                    className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-                  >
-                    <Avatar className="size-12">
-                      <CompanyLogo
-                        domain={platform.domain}
-                        className="size-full rounded-full object-contain p-1"
-                      />
-                    </Avatar>
+            <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
+              <InteractiveMotion className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto" variant="outline" asChild>
+                  <Link href="/about" target="_blank" rel="noopener noreferrer">
+                    More About Me
+                    <ArrowRightIcon />
                   </Link>
-                </HoverCardTrigger>
-                <HoverCardContent className="w-fit">
-                  <P>{platform.name}</P>
-                </HoverCardContent>
-              </HoverCard>
-            ))}
-          </div>
-        </section>
-        <section
-          id="articles-media"
-          className="flex w-full flex-col items-start gap-4 sm:w-auto"
-        >
-          <Link href="#articles-media">
-            <H2 className="underline">Other Activity</H2>
-          </Link>
-          <P className="w-full sm:w-sm">
-            Writing CTF write-ups and security breakdowns on{" "}
-            <Link
-              href="https://medium.com/@dedgh0st"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              Medium
-            </Link>
-            , plus sharing bite-sized cybersec content on{" "}
-            <Link
-              href="https://www.tiktok.com/@andrewvirya"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-            >
-              TikTok.
-            </Link>
-          </P>
-        </section>
-        <section
-          id="socials"
-          className="flex w-full flex-col items-start gap-4 sm:w-auto"
-        >
-          <Link href="#socials">
-            <H2 className="underline">Socials</H2>
-          </Link>
-          <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto">
-            {SOCIALS.map((social) => (
-              <Socials
-                key={social.name}
-                handle={social.handle}
-                name={social.name}
-                socialUrl={social.socialUrl}
-              />
-            ))}
-          </div>
-        </section>
-        <section
-          id="certifications"
-          className="flex w-full flex-col items-start gap-4 sm:w-auto"
-        >
-          <Link href="#certifications">
-            <H2 className="underline">Certifications</H2>
-          </Link>
-          <ul className="flex w-full flex-col gap-4 sm:w-auto">
-            {CERTIFICATIONS.map((certification) => (
-              <Certification
-                key={certification.name}
-                name={certification.name}
-                href={certification.href}
-                credentialId={certification.credentialId}
-                issuedBy={certification.issuedBy}
-                issuedDate={certification.issuedDate}
-                expirationDate={certification.expirationDate}
-              />
-            ))}
-          </ul>
-        </section>
-        <section id="contact" className="flex w-full flex-col gap-4 sm:w-auto">
-          <H2 className="underline">Contact</H2>
-          <Link
-            href="mailto:avv03@protonmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
+                </Button>
+              </InteractiveMotion>
+            </div>
+          </section>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <section
+            id="ctf"
+            className="flex w-full flex-col items-start gap-4 sm:w-auto"
           >
-            <P className="text-muted-foreground underline hover:text-black dark:hover:text-white">
-              avv03@protonmail.com
+            <Link href="#ctf">
+              <H2 className="underline">CTF</H2>
+            </Link>
+            <P>
+              Sharpening my cyber security skills in safe and controlled
+              environments.
             </P>
-          </Link>
-        </section>
+            <div className="grid w-full grid-cols-5 gap-4 sm:w-auto">
+              {CTF_PLATFORMS.map((platform) => (
+                <InteractiveMotion key={platform.href}>
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <Link
+                        href={platform.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit ${platform.name}`}
+                        className="rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                      >
+                        <Avatar className="size-12">
+                          <CompanyLogo
+                            domain={platform.domain}
+                            className="size-full rounded-full object-contain p-1"
+                          />
+                        </Avatar>
+                      </Link>
+                    </HoverCardTrigger>
+                    <HoverCardContent className="w-fit">
+                      <P>{platform.name}</P>
+                    </HoverCardContent>
+                  </HoverCard>
+                </InteractiveMotion>
+              ))}
+            </div>
+          </section>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <section
+            id="articles-media"
+            className="flex w-full flex-col items-start gap-4 sm:w-auto"
+          >
+            <Link href="#articles-media">
+              <H2 className="underline">Other Activity</H2>
+            </Link>
+            <P className="w-full sm:w-sm">
+              Writing CTF write-ups and security breakdowns on{" "}
+              <Link
+                href="https://medium.com/@dedgh0st"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+              >
+                Medium
+              </Link>
+              , plus sharing bite-sized cybersec content on{" "}
+              <Link
+                href="https://www.tiktok.com/@andrewvirya"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+              >
+                TikTok.
+              </Link>
+            </P>
+          </section>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <section
+            id="socials"
+            className="flex w-full flex-col items-start gap-4 sm:w-auto"
+          >
+            <Link href="#socials">
+              <H2 className="underline">Socials</H2>
+            </Link>
+            <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto">
+              {SOCIALS.map((social) => (
+                <Socials
+                  key={social.name}
+                  handle={social.handle}
+                  name={social.name}
+                  socialUrl={social.socialUrl}
+                />
+              ))}
+            </div>
+          </section>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <section
+            id="certifications"
+            className="flex w-full flex-col items-start gap-4 sm:w-auto"
+          >
+            <Link href="#certifications">
+              <H2 className="underline">Certifications</H2>
+            </Link>
+            <ul className="flex w-full flex-col gap-4 sm:w-auto">
+              {CERTIFICATIONS.map((certification) => (
+                <Certification
+                  key={certification.name}
+                  name={certification.name}
+                  href={certification.href}
+                  credentialId={certification.credentialId}
+                  issuedBy={certification.issuedBy}
+                  issuedDate={certification.issuedDate}
+                  expirationDate={certification.expirationDate}
+                />
+              ))}
+            </ul>
+          </section>
+        </Reveal>
+        <Reveal delay={0.05}>
+          <section
+            id="contact"
+            className="flex w-full flex-col gap-4 sm:w-auto"
+          >
+            <H2 className="underline">Contact</H2>
+            <Link
+              href="mailto:avv03@protonmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <P className="text-muted-foreground underline hover:text-black dark:hover:text-white">
+                avv03@protonmail.com
+              </P>
+            </Link>
+          </section>
+        </Reveal>
       </main>
     </div>
   );
