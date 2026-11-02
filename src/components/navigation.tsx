@@ -4,14 +4,13 @@ import { Button } from "./ui/button";
 
 const Navigation = ({ name, href }: NavigationProps) => {
   return (
-    <Link href={href || "/"}>
-      <Button
-        variant="link"
-        className="m-0 justify-start p-0 text-left text-primary dark:text-primary-foreground text-sm underline"
-      >
-        {name || "Home"}
-      </Button>
-    </Link>
+    <Button
+      asChild
+      variant="link"
+      className="m-0 justify-start p-0 text-left text-sm text-primary underline dark:text-primary-foreground"
+    >
+      <Link href={href || "/"}>{name || "Home"}</Link>
+    </Button>
   );
 };
 

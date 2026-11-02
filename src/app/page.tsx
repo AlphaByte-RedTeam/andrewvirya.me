@@ -32,8 +32,17 @@ import { SOCIALS } from "@/data/socials";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background font-sans">
+      <Link
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-background focus:px-3 focus:py-2 focus:text-foreground focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-ring"
+      >
+        Skip to content
+      </Link>
       <ConsoleBanner />
-      <main className="flex w-full max-w-3xl flex-1 flex-col items-start justify-between gap-16 bg-background px-4 py-16 sm:items-start sm:px-16 sm:py-32">
+      <main
+        id="main-content"
+        className="flex w-full max-w-3xl flex-1 flex-col items-start justify-between gap-16 bg-background px-4 py-16 sm:items-start sm:px-16 sm:py-32"
+      >
         <Reveal>
           <div className="flex w-full items-start justify-between gap-4">
             <nav className="flex items-center gap-2">
