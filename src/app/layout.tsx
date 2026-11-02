@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://andrewvirya.me"),
   title: "andrewvirya.me | Home",
   description:
     "Andrew Virya Victorio's personal website and portfolio. Offensive Security Practitioner, Penetration Tester, and Cybersecurity Enthusiast.",
