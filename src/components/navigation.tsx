@@ -7,7 +7,7 @@ const Navigation = ({ name, href }: NavigationProps) => {
     <Link href={href || "/"}>
       <Button
         variant="link"
-        className="m-0 justify-start p-0 text-left text-primary text-sm underline"
+        className="m-0 justify-start p-0 text-left text-primary dark:text-primary-foreground text-sm underline"
       >
         {name || "Home"}
       </Button>
