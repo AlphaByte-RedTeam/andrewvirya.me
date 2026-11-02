@@ -9,6 +9,7 @@ import Link from "next/link";
 import { Fragment } from "react";
 import Certification from "@/components/certification";
 import CompanyLogo from "@/components/company-logo";
+import ConsoleBanner from "@/components/console-banner";
 import InteractiveMotion from "@/components/interactive-motion";
 import Navigation from "@/components/navigation";
 import Reveal from "@/components/reveal";
@@ -31,6 +32,7 @@ import { SOCIALS } from "@/data/socials";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-background font-sans">
+      <ConsoleBanner />
       <main className="flex w-full max-w-3xl flex-1 flex-col items-start justify-between gap-16 bg-background px-4 py-16 sm:items-start sm:px-16 sm:py-32">
         <Reveal>
           <div className="flex w-full items-start justify-between gap-4">
