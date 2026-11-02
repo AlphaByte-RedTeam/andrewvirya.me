@@ -254,14 +254,29 @@ export default function Home() {
           </section>
         </Reveal>
       </main>
-      <footer className="flex w-full max-w-3xl items-center justify-between border-t px-4 py-6 text-sm text-muted-foreground sm:px-16">
-        <p>© 2026 Andrew Virya Victorio</p>
-        <Link
-          href="#main-content"
-          className="underline underline-offset-4 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+      <footer className="flex flex-col w-full max-w-3xl items-center border-t px-4 py-6 text-sm text-muted-foreground sm:px-16">
+        <pre
+          role="img"
+          aria-label="dedghost text art"
+          className="mb-6 w-full whitespace-pre font-mono text-[clamp(0.55rem,2.7vw,1.25rem)] leading-tight"
         >
-          Back to top ↑
-        </Link>
+          {[
+            "▗▄▄▄  ▗▞▀▚▖   ▐▌ ▗▄▄▖▐▌   ▄▀▀▚▖ ▄▄▄  ■",
+            "▐▌  █ ▐▛▀▀▘   ▐▌▐▌   ▐▌   █  ▐▌▀▄▄▗▄▟▙▄▖",
+            "▐▌  █ ▝▚▄▄▖▗▞▀▜▌▐▌▝▜▌▐▛▀▚▖█  ▐▌▄▄▄▀ ▐▌",
+            "▐▙▄▄▀      ▝▚▄▟▌▝▚▄▞▘▐▌ ▐▌▀▄▄▞▘     ▐▌",
+            "                                    ▐▌",
+          ].join("\n")}
+        </pre>
+        <div className="flex w-full items-center justify-between">
+          <p>© 2026 Andrew Virya Victorio</p>
+          <Link
+            href="#main-content"
+            className="underline underline-offset-4 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+          >
+            Back to top ↑
+          </Link>
+        </div>
       </footer>
     </div>
   );
