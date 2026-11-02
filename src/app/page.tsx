@@ -11,6 +11,7 @@ import Certification from "@/components/certification";
 import CompanyLogo from "@/components/company-logo";
 import Navigation from "@/components/navigation";
 import Socials from "@/components/socials";
+import ThemeSwitcher from "@/components/theme-switcher";
 import { H1, H2, P } from "@/components/typography";
 import { Avatar } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -27,22 +28,25 @@ import { SOCIALS } from "@/data/socials";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-neutral-100 font-sans">
-      <main className="flex w-full max-w-3xl flex-1 flex-col items-start justify-between bg-neutral-100 px-4 py-16 sm:items-start sm:px-16 sm:py-32 gap-16">
-        <div className="flex w-full flex-col items-stretch gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
-          {NAVIGATION.map((nav, idx) => (
-            <Fragment key={nav.name}>
-              <Navigation name={nav.name} href={nav.href} />
-              {idx < NAVIGATION.length - 1 && (
-                <span
-                  className="hidden text-muted-foreground sm:inline"
-                  aria-hidden="true"
-                >
-                  /
-                </span>
-              )}
-            </Fragment>
-          ))}
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background font-sans">
+      <main className="flex w-full max-w-3xl flex-1 flex-col items-start justify-between gap-16 bg-background px-4 py-16 sm:items-start sm:px-16 sm:py-32">
+        <div className="flex w-full items-start justify-between gap-4">
+          <nav className="flex w-full flex-col items-stretch gap-2 sm:w-auto sm:flex-row sm:items-center sm:justify-center">
+            {NAVIGATION.map((nav, idx) => (
+              <Fragment key={nav.name}>
+                <Navigation name={nav.name} href={nav.href} />
+                {idx < NAVIGATION.length - 1 && (
+                  <span
+                    className="hidden text-muted-foreground sm:inline"
+                    aria-hidden="true"
+                  >
+                    /
+                  </span>
+                )}
+              </Fragment>
+            ))}
+          </nav>
+          <ThemeSwitcher />
         </div>
         <div className="flex w-full flex-col items-stretch gap-4 sm:w-auto sm:items-start">
           <div className="flex flex-col items-start gap-1">
@@ -154,7 +158,7 @@ export default function Home() {
               href="https://medium.com/@dedgh0st"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-blue-800"
+              className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
             >
               Medium
             </Link>
@@ -163,7 +167,7 @@ export default function Home() {
               href="https://www.tiktok.com/@andrewvirya"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 underline hover:text-blue-800"
+              className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
             >
               TikTok.
             </Link>
@@ -215,7 +219,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <P className="text-muted-foreground underline hover:text-black">
+            <P className="text-muted-foreground underline hover:text-black dark:hover:text-white">
               avv03@protonmail.com
             </P>
           </Link>
