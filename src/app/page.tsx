@@ -194,7 +194,7 @@ export default function Home() {
                 href="https://medium.com/@dedgh0st"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 Medium
               </Link>
@@ -203,7 +203,7 @@ export default function Home() {
                 href="https://www.tiktok.com/@andrewvirya"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 TikTok.
               </Link>
@@ -269,7 +269,16 @@ export default function Home() {
           ].join("\n")}
         </pre>
         <div className="flex w-full items-center justify-between">
-          <p>© 2026 Andrew Virya Victorio</p>
+          <P>
+            Design inspos from{" "}
+            <Link
+              href="https://shadcn.com/"
+              className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
+              ShadCN
+            </Link>
+          </P>
+          <P>© 2026 Andrew Virya Victorio</P>
           <Link
             href="#main-content"
             className="underline underline-offset-4 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
