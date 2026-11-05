@@ -106,7 +106,7 @@ export default function Home() {
           >
             <div className="flex flex-col items-start gap-4">
               <Link href="#about-me">
-                <H2 className="underline">About Me</H2>
+                <H2 className="underline underline-offset-4">About Me</H2>
               </Link>
               <div className="flex flex-col gap-1 items-start">
                 <P>I break systems legally for a living.</P>
@@ -145,7 +145,7 @@ export default function Home() {
             className="flex w-full flex-col items-start gap-4 sm:w-auto"
           >
             <Link href="#ctf">
-              <H2 className="underline">CTF</H2>
+              <H2 className="underline underline-offset-4">CTF</H2>
             </Link>
             <P>
               Sharpening my cyber security skills in safe and controlled
@@ -186,7 +186,7 @@ export default function Home() {
             className="flex w-full flex-col items-start gap-4 sm:w-auto"
           >
             <Link href="#articles-media">
-              <H2 className="underline">Other Activity</H2>
+              <H2 className="underline underline-offset-4">Other Activity</H2>
             </Link>
             <P className="w-full sm:w-sm">
               Writing CTF write-ups and security breakdowns on{" "}
@@ -216,7 +216,7 @@ export default function Home() {
             className="flex w-full flex-col items-start gap-4 sm:w-auto"
           >
             <Link href="#socials">
-              <H2 className="underline">Socials</H2>
+              <H2 className="underline underline-offset-4">Socials</H2>
             </Link>
             <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto">
               {SOCIALS.map((social) => (
@@ -236,7 +236,7 @@ export default function Home() {
             className="flex w-full flex-col items-start gap-4 sm:w-auto"
           >
             <Link href="#certifications">
-              <H2 className="underline">Certifications</H2>
+              <H2 className="underline underline-offset-4">Certifications</H2>
             </Link>
             <ul className="flex w-full flex-col gap-4 sm:w-auto">
               {CERTIFICATIONS.map((certification) => (
@@ -273,7 +273,7 @@ export default function Home() {
             Design inspos from{" "}
             <Link
               href="https://shadcn.com/"
-              className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+              className="text-blue-600 underline underline-offset-4 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             >
               ShadCN
             </Link>
