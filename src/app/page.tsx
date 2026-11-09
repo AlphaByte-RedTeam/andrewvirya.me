@@ -72,7 +72,7 @@ export default function Home() {
                 <P className="font-mono text-lg">dedgh0st</P>
               </div>
               <P className="font-inter text-muted-foreground text-sm">
-                Offensive Security Practitioner
+                Offensive Security Researcher | Penetration Tester | CTF Player
               </P>
             </div>
             <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row">
@@ -194,7 +194,7 @@ export default function Home() {
                 href="https://medium.com/@dedgh0st"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className="text-blue-600 underline underline-offset-4 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 Medium
               </Link>
@@ -203,7 +203,7 @@ export default function Home() {
                 href="https://www.tiktok.com/@andrewvirya"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className="text-blue-600 underline underline-offset-4 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
               >
                 TikTok.
               </Link>
